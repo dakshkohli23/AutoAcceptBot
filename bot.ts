@@ -1,10 +1,3 @@
-/*
-ChannelActions Bot
-Telegram: @ChannelActionsBot
-
-(c) Aditya, https://xditya.me
-*/
-
 import config from "./env.ts";
 import { get_perms } from "./helpers.ts";
 import {
@@ -114,15 +107,14 @@ bot.callbackQuery("cancelLocaleSetting", async (ctx) => {
     parse_mode: "HTML",
     reply_markup: new InlineKeyboard()
       .text(ctx.t("usage-help"), "helper").row()
-      .text("Change Language", "setLang").row()
-      .url(ctx.t("updates"), "https://t.me/BotzHub"),
+      .text("Change Language", "setLang").row(),
     disable_web_page_preview: true,
   });
 });
 bot.callbackQuery("helper", async (ctx) => {
   await ctx.editMessageText(
     ctx.t("help") +
-      "\n\nTo approve members who are already in waiting list, upgrade to premium! Contact @xditya_bot for information on pricing.",
+      "\n\nCheck With @Dlaize",
     {
       reply_markup: new InlineKeyboard().text("Main Menu 📭", "cancelLocaleSetting"),
       parse_mode: "HTML",
@@ -347,7 +339,7 @@ bot
 <b>Total Users Seen (Approved/Disapproved)</b>: ${TOTAL_USERS_SEEN}
 <b>Uptime</b>: ${uptime}
 
-<b><a href="https://github.com/xditya/ChannelActionsBot">Repository</a> | <a href="https://t.me/BotzHub">Channel</a> | <a href="https://t.me/BotzHubChat">Support</a></b>`,
+<b> Dlaize </b>`,
       { parse_mode: "HTML", disable_web_page_preview: true },
     );
   });
